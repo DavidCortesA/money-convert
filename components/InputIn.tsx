@@ -1,10 +1,9 @@
-import { formatNumber } from "@/hooks/useFormatNumber";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function InputIn({ number, currency }: { number: string; currency: string }) {
   return (
     <View>
-      <Text style={{ fontSize: number?.length > 16 ? 42 : 64, ...styles.text }}>${formatNumber(number)} {currency}</Text>
+      <Text style={{ fontSize: number?.length > 16 ? 42 : 64, ...styles.text }}>${number} {currency}</Text>
     </View>
   )
 }

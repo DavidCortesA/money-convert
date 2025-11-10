@@ -5,7 +5,7 @@ import ButtonComponent from "./Common/ButtonComponent";
 export default function InputOut({ number, onChange, newCurrency }: { number: string, onChange: () => void, newCurrency: string}) {
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: number?.length > 16 ? 42 : 64, ...styles.textNumber }}>${formatNumber(number)} {newCurrency}</Text>
+      <Text style={{ fontSize: number?.length > 8 ? 42 : 64, ...styles.textNumber }}>${formatNumber(number)} {newCurrency}</Text>
       <View>
         <ButtonComponent title="Volver" onPress={onChange} />
       </View>

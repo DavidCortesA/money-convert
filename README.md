@@ -109,7 +109,7 @@ money-convert/
 ## 🧑‍💻 Autor
 
 Desarrollado con ❤️ por **David Cortez**
-📧 Contacto: [david.cortes.ayala@hotmail.com(mailto:david.cortes.ayala@hotmail.com)]
+📧 Contacto: [[david.cortes.ayala@hotmail.com](mailto:david.cortes.ayala@hotmail.com)]
 🌐 [LinkedIn](https://www.linkedin.com/in/davidcortesa/) | [GitHub](https://github.com/DavidCortesA/)
 
 ---

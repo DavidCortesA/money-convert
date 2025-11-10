@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "money-convert",
-    "slug": "money-convert",
+    "slug": "monver-convert",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -30,10 +30,10 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#002800",
           "dark": {
             "backgroundColor": "#000000"
           }
@@ -43,6 +43,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c2e02a6d-4eff-4dfb-ab1d-88b6f1db3880"
+      }
+    },
+    "owner": "davidcortesa"
   }
 }

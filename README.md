@@ -100,7 +100,9 @@ money-convert/
 
 ## 📸 Capturas (opcional)
 
-> Agrega aquí imágenes o GIFs de tu app en funcionamiento.
+| Pantalla principal |	Conversión |	Selección de divisas |
+| ----------------- | ----------- | --------------------- |
+| <img src="./assets/images/Screen 1.jpg" width="250"/>	| <img src="./assets/images/Screen 2.jpg" width="250"/> |	<img src="./assets/images/Screen 3.jpg" width="250"/> |
 
 ---
 

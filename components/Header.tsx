@@ -3,7 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import InputIn from "./InputIn";
 import { VALUES } from '@/constants/values';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useChangeMoney } from '@/hooks/useChangeMoney';
+import { formatNumber } from '@/hooks/useFormatNumber';
+import { formatDate } from '@/hooks/useFormatDate';
 
 export default function Header({
   number,
@@ -24,6 +27,8 @@ export default function Header({
     { change: "eur", value: VALUES.EUR },
     { change: "gbp", value: VALUES.GBP },
   ], []);
+  const { changeMoney, updated } = useChangeMoney();
+  const [currentChange, setCuerrentChange] = useState<any>();
   
   // Referencias a los dropdowns para poder controlarlos
   const fromDropdownRef = useRef<any>(null);
@@ -47,12 +52,22 @@ export default function Header({
       toDropdownRef.current.selectIndex(toIndex);
     }
   }, [currency, newCurrency, listOfMoney]);
+
+  useEffect(() => {
+    const newValue = changeMoney(
+      1,
+      currency as string,
+      newCurrency as string
+    );
+    setCuerrentChange(newValue);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currency, newCurrency]);
   
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
         <Text style={{ color: "#fff", fontSize: 24, fontWeight: "bold", marginBottom: 10 }}>
-          Seleccionar las divisas
+          Selecciona las divisas
         </Text>
 
         <View style={styles.selectors}>
@@ -124,6 +139,8 @@ export default function Header({
         </View>
 
         <InputIn number={number} currency={currency as string} />
+        <Text style={{ color: "#999", fontSize: 14, textAlign: "center" }}>Cambio Actual: $1.00 {currency} = ${formatNumber(currentChange)} {newCurrency}</Text>
+        <Text style={{ color: "#999", fontSize: 14, textTransform: "capitalize", textAlign: "center" }}>Actualizado: {updated[currency] ? formatDate(updated[currency]) : "N/A"}</Text>
       </View>
     </View>
   );

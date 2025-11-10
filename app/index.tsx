@@ -1,12 +1,13 @@
 import Header from "@/components/Header";
 import InputOut from "@/components/InputOut";
 import Keyboard from "@/components/Keyboard";
-import { changeMoney } from "@/hooks/changeMoney";
+import { useChangeMoney } from "@/hooks/useChangeMoney";
 import { useEffect, useState } from "react";
-import { View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Index() {
+  const { changeMoney, loading } = useChangeMoney();
   const [number, setNumber] = useState<string>();
   const [change, setChange] = useState<boolean>(true);
   const [numberChanged, setNumberChanged] = useState<number | string>();
@@ -28,17 +29,34 @@ export default function Index() {
   }
 
   const handleChangeMoney = () => {
-    const newValue = changeMoney(parseFloat(number as string), currency as string, newCurrency as string);
+    const newValue = changeMoney(
+      parseFloat(number as string),
+      currency as string,
+      newCurrency as string
+    );
     setNumberChanged(newValue.toString());
     handleChange();
   }
 
   useEffect(() => {
     if (numberChanged) {
-      const newValue = changeMoney(parseFloat(number as string), currency as string, newCurrency as string);
+      const newValue = changeMoney(
+        parseFloat(number as string),
+        currency as string,
+        newCurrency as string
+      );
       setNumberChanged(newValue.toString());
     }
-  }, [numberChanged, currency, newCurrency, number])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [numberChanged, currency, newCurrency, number]);
+
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ActivityIndicator size="large" color="#002800" />
+      </View>
+    )
+  }
 
   return (
     <View

@@ -1,4 +1,4 @@
-import { formatNumber } from "@/hooks/formatNumber";
+import { formatNumber } from "@/hooks/useFormatNumber";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function InputIn({ number, currency }: { number: string; currency: string }) {

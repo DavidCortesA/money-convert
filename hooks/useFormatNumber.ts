@@ -8,6 +8,6 @@ export const formatNumber = (value: string | number): string => {
   // Formatear con comas de miles
   return numberValue.toLocaleString("en-US", {
     minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
+    maximumFractionDigits: 4,
   });
 };

@@ -1,6 +1,6 @@
+import { formatNumber } from "@/hooks/useFormatNumber";
 import { StyleSheet, Text, View } from "react-native";
 import ButtonComponent from "./Common/ButtonComponent";
-import { formatNumber } from "@/hooks/formatNumber";
 
 export default function InputOut({ number, onChange, newCurrency }: { number: string, onChange: () => void, newCurrency: string}) {
   return (

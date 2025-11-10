@@ -1,50 +1,134 @@
-# Welcome to your Expo app 👋
+# 💱 Money Convert
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Money Convert** es una aplicación móvil desarrollada con **React Native (Expo)** que permite convertir dinero entre cuatro divisas principales: **Peso Mexicano (MXN)**, **Dólar Estadounidense (USD)**, **Euro (EUR)** y **Libra Esterlina (GBP)**.  
+Su diseño es simple, rápido y pensado para ofrecer conversiones actualizadas en tiempo real.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Características principales
 
-   ```bash
-   npm install
-   ```
+- 🌐 Conversión en tiempo real entre:
+  - 🇲🇽 **MXN** (Peso Mexicano)
+  - 🇺🇸 **USD** (Dólar Estadounidense)
+  - 🇪🇺 **EUR** (Euro)
+  - 🇬🇧 **GBP** (Libra Esterlina)
+- 🔄 Intercambio rápido entre divisas (botón de “swap”).
+- 💰 Formato numérico amigable para mostrar montos.
+- 🕒 Indicación de la última actualización de los tipos de cambio.
+- ⚡ Interfaz ligera, responsiva y optimizada para móviles.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Tecnologías utilizadas
 
-In the output, you'll find options to open the app in a
+- [Expo](https://expo.dev/) – entorno para desarrollo y compilación móvil.
+- [React Native](https://reactnative.dev/) – framework para apps móviles nativas.
+- [React Navigation](https://reactnavigation.org/) – navegación entre pantallas.
+- [React Native Select Dropdown](https://www.npmjs.com/package/react-native-select-dropdown) – selección de divisas.
+- [FastForex API](https://fastforex.io/) – obtención de los tipos de cambio actuales.
+- [TypeScript](https://www.typescriptlang.org/) – tipado estático para un código más seguro.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📦 Instalación y uso
 
-## Get a fresh project
+### 1️⃣ Clona el repositorio
+```bash
+git clone https://github.com/DavidCortesA/money-convert.git
+cd money-convert
+````
 
-When you're ready, run:
+### 2️⃣ Instala las dependencias
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 3️⃣ Crea un archivo `.env` (opcional si usas una API externa)
 
-## Learn more
+Agrega tu **API Key** de [FastForex](https://fastforex.io/):
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+API_KEY=tu_api_key_aqui
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 4️⃣ Inicia la app
 
-## Join the community
+```bash
+npm start
+```
 
-Join our community of developers creating universal apps.
+Luego elige una de las opciones:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+* Presiona `a` para abrir en Android.
+* Presiona `i` para abrir en iOS.
+* Presiona `w` para abrir en navegador web.
+
+---
+
+## 📁 Estructura principal del proyecto
+
+```
+money-convert/
+│
+├── app/                   # Rutas gestionadas por Expo Router
+├── components/            # Componentes reutilizables (Header, InputIn, etc.)
+├── hooks/                 # Custom hooks (useChangeMoney, useFormatNumber, etc.)
+├── constants/             # Valores estáticos (monedas, símbolos, etc.)
+├── scripts/               # Scripts utilitarios
+└── package.json           # Configuración del proyecto
+```
+
+---
+
+## 🔐 Variables de entorno
+
+| Variable  | Descripción                             | Ejemplo        |
+| --------- | --------------------------------------- | -------------- |
+| `API_KEY` | Clave para consumir la API de FastForex | `123abc456def` |
+
+---
+
+## 🧮 Ejemplo de uso
+
+1. Selecciona la moneda de origen (por ejemplo, **MXN**).
+2. Selecciona la moneda destino (por ejemplo, **USD**).
+3. Ingresa un monto y automáticamente verás la conversión.
+4. Usa el botón de “swap” 🔁 para invertir las divisas.
+
+---
+
+## 📸 Capturas (opcional)
+
+> Agrega aquí imágenes o GIFs de tu app en funcionamiento.
+
+---
+
+## 🧑‍💻 Autor
+
+Desarrollado con ❤️ por **David Cortez**
+📧 Contacto: [[david.cortes.ayala@hotmail.com](mailto:david.cortes.ayala@hotmail.com)]
+🌐 [LinkedIn](https://www.linkedin.com/in/davidcortesa/) | [GitHub](https://github.com/DavidCortesA/)
+
+---
+
+## 📝 Licencia
+
+Este proyecto está bajo la licencia **MIT**.
+Puedes usarlo, modificarlo y distribuirlo libremente citando la autoría.
+
+---
+
+## ⭐ Contribuye
+
+Si deseas mejorar el proyecto:
+
+1. Haz un fork.
+2. Crea una rama: `git checkout -b feature/nueva-funcionalidad`
+3. Envía un PR (Pull Request).
+
+---
+
+### 💡 Nota:
+
+Los tipos de cambio dependen de la API de terceros (FastForex), por lo que podrían variar según la disponibilidad del servicio.
